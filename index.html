@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="editor-container">
+        <div class="tab-indicators">
+            <div class="tab html-tab" data-tab="html">HTML</div>
+            <div class="tab css-tab" data-tab="css">CSS</div>
+            <div class="tab js-tab" data-tab="js">JS</div>
+        </div>
+        
+        <div class="editor-content">
+            <div class="code-editors">
+                <div class="editor-box html-editor">
+                    <textarea id="html-code" class="code-input" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is a live code editor.&lt;/p&gt;
+    &lt;button id="demo-btn"&gt;Click Me&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                </div>
+                
+                <div class="editor-box css-editor">
+                    <textarea id="css-code" class="code-input" spellcheck="false">body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #4285f4;
+}
+
+#demo-btn {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#demo-btn:hover {
+    background-color: #3367d6;
+}</textarea>
+                </div>
+                
+                <div class="editor-box js-editor">
+                    <textarea id="js-code" class="code-input" spellcheck="false">document.getElementById('demo-btn').addEventListener('click', function() {
+    alert('Button clicked!');
+});</textarea>
+                </div>
+            </div>
+            
+            <div class="output-container">
+                <iframe id="output-frame"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <button class="run-button tooltip" id="run-button" title="Run Code">
+        ▶
+        <span class="tooltiptext">Run Code (Ctrl+Enter)</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
